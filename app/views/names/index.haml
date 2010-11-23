@@ -1,0 +1,16 @@
+%h1 Names!
+
+- if notice
+  %p= notice
+
+- form_for Name.new do |f|
+  %label ..and what's your name?
+  = f.text_field :name
+  = submit_tag "Save"
+
+%h2 Heres' The names I know:
+
+%ul
+- @names.each do |name|
+  %li= name.name
+
